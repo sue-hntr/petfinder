@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PetFinder - Express</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h3>Pet Finder Survey Questions</h3>
+    </div>    <!--close jumbotron-->
+
+    <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3><strong>About You</strong></h3>
+            </div>
+            <div class="card-body">
+              <form method="POST" role="form">
+ 
+                <div class="form-group">
+                  <label for="name">Name (Required)</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+  
+                <div class="form-group">
+                  <label for="role">Link to Photo Image</label>
+                  <input type="text" class="form-control" id="photo">
+                </div>
+
+                <div class="form-group ques_space">
+                    <label for="a0">How would your friends describe you?</label>
+                    <select class="form-control" id="a0">
+                      <option value=""></option>
+                      <option value="1" >Independent</option>
+                      <option value="2" >Shy</option>
+                      <option value="3" >Sneaky</option>
+                      <option value="4" >Social</option>
+                      <option value="5" >Hardworking</option>
+                    </select>
+                </div>
+                <div class="form-group ques_space">
+                  <label for="a1">Which game would you most like to play?</label>  
+                  <select class="form-control" id="a1">
+                      <option value=""></option>
+                    <option value="1">Twister</option>
+                    <option value="2">waterpolo</option>
+                    <option value="3">tag</option>
+                    <option value="4">scavenger hunt</option>
+                    <option value="5">catch</option>
+                  </select>
+                </div>  
+
+                <div class="form-group ques_space">
+                  <label for="a2">Which is your favorite season?</label>  
+                  <select class="form-control" id="a2">
+                      <option value=""></option>
+                    <option value="1">Spring</option>
+                    <option value="2">Summer</option>
+                    <option value="3">Winter</option>
+                    <option value="4">Fall</option>
+                    <option value="5">It doesn’t matter</option>
+                  </select>
+                  </div>
+                <div class="form-group ques_space">
+                  <label for="a3">Pick a color</label>  
+                  <select class="form-control" id="a3">
+                      <option value=""></option>
+                    <option value="1">red</option>
+                    <option value="2">green</option>
+                    <option value="3">blue</option>
+                    <option value="4">yellow</option>
+                    <option value="5">purple</option>
+                  </select>
+                </div>
+                <div class="form-group ques_space">
+                  <label for="a4">Pick a pet home location</label>
+                    
+                  <select class="form-control" id="a4">
+                      <option value=""></option>
+                    <option value="1">Country house</option>
+                    <option value="2">City apartment</option>
+                    <option value="3">shelf by a window</option>
+                    <option value="4">beach house</option>
+                    <option value="5">treehouse</option>
+                  </select>
+                </div>
+                <div class="form-group ques_space">
+                  <label for="a5">What is your favorite food to feed pets?</label>  
+                  <select class="form-control" id="a5">
+                      <option value=""></option>
+                    <option value="1">meat</option>
+                    <option value="2">grains</option>
+                    <option value="3">vegetables</option>
+                    <option value="4">bugs</option>
+                    <option value="5">processed food</option>
+                  </select>
+                </div>
+                <div class="form-group ques_space">
+                  <label for="a6">Your favorite kind of shoes</label>  
+                  <select class="form-control" id="a6">
+                      <option value=""></option>
+                    <option value="1">boots</option>
+                    <option value="2">sneakers</option>
+                    <option value="3">comfy slippers</option>
+                    <option value="4">flip flops</option>
+                    <option value="5">fancy dress shoes</option>
+                  </select>
+                </div>
+                  
+                  <div class="form-group ques_space">
+                      <label for="a7">I’m a homebody</label>
+                      <select class="form-control" id="a7">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+                
+                  <div class="form-group ques_space">
+                      <label for="a8">I do not like to cuddle</label>
+                      <select class="form-control" id="a8">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>  
+                                
+                  <div class="form-group ques_space">
+                      <label for="a9">I want constant companionship</label>
+                      <select class="form-control" id="a9">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>  
+
+                  <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitIt"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                    Submit</button>
+
+                    <footer class="footer">
+                      <div class="container">
+                        <p>
+                          <a href="/api/pets">API petfreinds Link</a> |
+                      </div>
+                    </footer>
+
+</body>
+</html>
+
+<script type="text/javascript">
+  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+  $("#submitIt").on("click", function(event) {
+    event.preventDefault();
+    // console.log("button hit");
+
+    var surveyScores = [];
+    for (var i=0; i<10; i++){
+      var answQues = parseInt($("#a" + [i]).val());
+      // console.log(answQues);
+      // var answQues2 = parseInt(answQues);
+      console.log(answQues);
+      // typeof answQues2;
+      surveyScores.push(answQues);
+    }
+
+    // console.log("Scores " + surveyScores);
+
+    // Here we grab the form elements
+    var newPet = {
+      name: $("#name").val().trim(),
+      photo: $("#photo").val().trim(),
+      scores: surveyScores
+    };
+
+    // console.log(newPet);
+
+    // This line is the magic. It"s very similar to the standard ajax function we used.
+    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    // depending on if a tables is available or not.
+
+    $.post("/api/pets", newPet)
+        .then(function(data) {
+          console.log("add.html", data);
+          alert("Adding character...");
+        });
+    });
+
+</script>
+                    
+       
+
+
+
+
+
+
