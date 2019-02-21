@@ -32,6 +32,10 @@ app.post("/api/pets", function(req, res) {
     pets.push(petFriend);
   
     res.json(petFriend);
+
+///PUT THE PSEUDO CODE HERE 
+//USE HIDE SHOW JQUERY FOR THE MODAL
+
   });
   
 }
