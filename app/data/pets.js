@@ -1,66 +1,151 @@
 module.exports = [{
-  "name":"Ahmed",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "name":"Slytherin the red and black snake",
+  "photo":"https://images.pexels.com/photos/34426/snake-rainbow-boa-reptile-scale.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   "scores":[
-      5,
+      3,
       1,
-      4,
-      4,
-      5,
-      1,
+      2,
       2,
       5,
       4,
+      2,
+      1,
+      5,
       1
     ]
-}]
-
-
-// You should save your application's data inside of `app/data/friends.js` as an array of objects. Each of these objects should roughly follow the format below.
-
-// ```json
-
-// ```
-
-
-//ALSO 
-var tables = [
-    {
-    "customerName": "test",
-    "phoneNumber": "55325",
-    "customerEmail": "324",
-    "customerID": "lkd;afj"
-    }
-];
-var waitlist = [];
-
-
-  // Starts the server to begin listening
-// =============================================================
-  var waitlist = [
-    {
-    "customerName": "test",
-    "phoneNumber": "55325",
-    "customerEmail": "324",
-    "customerID": "lkd;afj"
-    },
-    {
-    "customerName": "Jen",
-    "phoneNumber": "5555555555",
-    "customerEmail": "test@email.com",
-    "customerID": "15"
-    },
-    {
-    "customerName": "John",
-    "phoneNumber": "111",
-    "customerEmail": "sa@1",
-    "customerID": "2124"
-    },
-    {
-    "customerName": "John and Jay",
-    "phoneNumber": "1234567890",
-    "customerEmail": "asdf@asdf.com",
-    "customerID": "as;ldfkjasdf;lkjasdf;lkjasdf;lkasjdfa;slkjdf"
-    }
-    ];
-
+},{
+  "name":"Eunice the iguana",
+  "photo":"https://images.pexels.com/photos/33321/iguana-white-background-reptile.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      3,
+      4,
+      2,
+      2,
+      5,
+      4,
+      2,
+      2,
+      5,
+      1
+    ]
+},{
+  "name":"Ghengis the goldfish",
+  "photo":"https://images.pexels.com/photos/886210/pexels-photo-886210.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      1,
+      2,
+      5,
+      3,
+      3,
+      5,
+      4,
+      2,
+      5,
+      2
+    ]
+},{
+  "name":"Queenie the hermit crab",
+  "photo":"https://images.pexels.com/photos/38626/crab-hermit-macro-sand-38626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      2,
+      3,
+      2,
+      3,
+      4,
+      5,
+      4,
+      3,
+      5,
+      3
+    ]
+},{
+  "name":"Fluffy the tarantula",
+  "photo":"https://images.pexels.com/photos/236650/pexels-photo-236650.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      3,
+      4,
+      2,
+      2,
+      2,
+      4,
+      2,
+      3,
+      5,
+      1
+    ]
+}, {
+  "name":"Winston the budgie",
+  "photo":"https://images.pexels.com/photos/248241/pexels-photo-248241.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      4,
+      3,
+      1,
+      4,
+      2,
+      2,
+      3,
+      5,
+      3,
+      3
+    ]
+}, {
+  "name":"Wallop the bunster",
+  "photo":"https://images.pexels.com/photos/104373/pexels-photo-104373.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      2,
+      3,
+      1,
+      2,
+      4,
+      3,
+      3,
+      5,
+      3,
+      4
+    ]
+},{
+  "name":"Kylo and Rey",
+  "photo":"https://images.pexels.com/photos/50572/guinea-pig-guinea-pig-house-cavia-porcellus-form-domestica-50572.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      4,
+      4,
+      1,
+      2,
+      3,
+      3,
+      3,
+      5,
+      2,
+      5
+    ]
+},{
+  "name":"Natasha",
+  "photo":"https://images.pexels.com/photos/1629066/pexels-photo-1629066.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      4,
+      4,
+      5,
+      1,
+      1,
+      1,
+      2,
+      5,
+      1,
+      5
+    ]
+},{
+  "name":"Blinker",
+  "photo":"https://images.pexels.com/photos/8700/wall-animal-dog-pet.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "scores":[
+      5,
+      5,
+      4,
+      1,
+      1,
+      1,
+      1,
+      4,
+      1,
+      5
+    ]
+}];
