@@ -9,7 +9,15 @@ var counter = 0;
 
 //--//DO THIS FOR EACH ITEM IN PETS.JS
 while (counter < petfriends -1 ){
+    // a SELECT SCORES IN NEWPET
+    // b GO TO NEXT ITEM IN PETS.LENGTH, GET THE SCORES
+    // c COMPARE ARRAYS()
+    // d PUSH RESULT INTO SAVE ARRAY COMPARE
+    // e REPEAT FOR ALL PET.JS ITEMS
 
+    // f SELECT THE LOWEST VALUE IN SAVE ARRAY FINAL (displayFinal())
+    // g DISPLAY MODAL SHOWING INFO FROM LOWEST VALUE
+    
 
 }
 
@@ -47,7 +55,7 @@ function displayFinal(savArrayCompare){
     for (var k = 0; k < 25; k++){
         var arraySpot = savArrayCompare[k];
         if (arraySpot === k){
-            return k;
+            console.log("The closest petfriend is " + k);
         }
     }
 /////////FIX THIS
