@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <title>PetFinder - Express</title>
   <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" type="text/css" href="../public/css/style.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
+
 
 </head>
 
@@ -85,7 +87,7 @@
                   </select>
                 </div>
                 <div class="form-group ques_space">
-                  <label for="a4">Pick a pet home location</label>
+                  <label for="a4">Pick a location to make a home with your pet.</label>
                     
                   <select class="form-control" id="a4">
                       <option value=""></option>
@@ -158,11 +160,13 @@
                   <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitIt"><i class="fa fa-check-circle" aria-hidden="true"></i>
                     Submit
                   </button>
+                  <hr>
 
                     <footer class="footer">
                       <div class="container">
                         <p>
-                          <a href="/api/pets">API petfriends Link</a> |
+                          <a href="/api/pets">API Petfriends Link</a> |
+                          <a href="https://github.com/sue-hntr/petfinder">Github Repo</a>
                       </div>
                     </footer>
 
@@ -172,10 +176,10 @@
 </button> -->
 
 <!-- Modal -->
-<div class="modal fade" id="displayFinalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="displayFinalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog">
 
-    <div class="modal-content">
+    <div class="modal-content" style="width: 150%">
       <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">×</button> -->
         <h3 class="modal-title">
@@ -189,78 +193,48 @@
           <img id="match-img" src=" " alt="">
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
 
       </div>
     </div>
   </div>
 </div>
 
+    <script type="text/javascript">
 
+      $("#submitIt").on("click", function(event) {
+        event.preventDefault();
+        // console.log("button hit");
 
-</body>
+        var surveyScores = [];
+        for (var i=0; i<10; i++){
+          var answQues = parseInt($("#a" + [i]).val());
+          console.log(answQues);
+          surveyScores.push(answQues);
+        }
+
+        // Here we grab the form elements
+        var newPet = {
+          name: $("#name").val().trim(),
+          photo: $("#photo").val().trim(),
+          scores: surveyScores
+        };
+
+      // AJAX post the data to the friends API.
+      $.post("/api/pets", newPet, function(data) {
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
+
+          // Show the modal with the best match
+          $("#displayFinalModal").modal("toggle");
+      });
+    });
+</script>
+  </body>
 </html>
 
-<script type="text/javascript">
-  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-
-  $("#submitIt").on("click", function(event) {
-    event.preventDefault();
-    // console.log("button hit");
-
-    var surveyScores = [];
-    for (var i=0; i<10; i++){
-      var answQues = parseInt($("#a" + [i]).val());
-      // console.log(answQues);
-      // var answQues2 = parseInt(answQues);
-      console.log(answQues);
-      // typeof answQues2;
-      surveyScores.push(answQues);
-    }
-
-    // console.log("Scores " + surveyScores);
-
-    // Here we grab the form elements
-    var newPet = {
-      name: $("#name").val().trim(),
-      photo: $("#photo").val().trim(),
-      scores: surveyScores
-    };
-
-    // console.log(newPet);
-
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
-
-    // $.post("/api/pets", newPet)
-    //     .then(function(data) {
-    //       // console.log("add.html", data);
-    //       // alert("Adding character...");
-    //       $("#displayFinalModal").modal("toggle");
-    //     });
-
-  // AJAX post the data to the friends API.
-  $.post("/api/pets", newPet, function(data) {
-      // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-      $("#match-name").text(data.name);
-      $("#match-img").attr("src", data.photo);
-
-      // Show the modal with the best match
-      $("#displayFinalModal").modal("toggle");
-
-});
-
-
-    });
-
-</script>
-                    
        
 
 
