@@ -166,27 +166,32 @@
                       </div>
                     </footer>
 
-<!-- Button trigger modal -->
+<!-- Button trigger modal
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
-</button>
+</button> -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="displayFinalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <!-- <button type="button" class="close" data-dismiss="modal">×</button> -->
+        <h3 class="modal-title">
+            Best Pet Companion for You</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+          <h2 id="match-name"></h2>
+          <img id="match-img" src=" " alt="">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
       </div>
     </div>
   </div>
@@ -233,11 +238,25 @@
     // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
     // depending on if a tables is available or not.
 
-    $.post("/api/pets", newPet)
-        .then(function(data) {
-          console.log("add.html", data);
-          alert("Adding character...");
-        });
+    // $.post("/api/pets", newPet)
+    //     .then(function(data) {
+    //       // console.log("add.html", data);
+    //       // alert("Adding character...");
+    //       $("#displayFinalModal").modal("toggle");
+    //     });
+
+  // AJAX post the data to the friends API.
+  $.post("/api/pets", newPet, function(data) {
+      // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+      $("#match-name").text(data.name);
+      $("#match-img").attr("src", data.photo);
+
+      // Show the modal with the best match
+      $("#displayFinalModal").modal("toggle");
+
+});
+
+
     });
 
 </script>

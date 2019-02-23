@@ -8,6 +8,7 @@ module.exports = function(app){
     res.json(pets);
   });
 
+
   // app.get("/api/pets", function(req, res) {
   //   res.sendFile(path.join(__dirname, "pets.html"));
   // });
@@ -26,7 +27,7 @@ app.post("/api/pets", function(req, res) {
   
     console.log(petFriend);
     pets.push(petFriend);
-    res.json(petFriend);
+    // res.json(petFriend);
     // console.log(pets[4].scores);
 
 //newpet.scores versus pets.js[0].scores
@@ -75,7 +76,26 @@ for (var z = 0; z < petsAll; z++){
   var findPetLoc = savArrayCompare.indexOf(findPetLowest);
   console.log("Location of LowestNum in Pets: " + findPetLoc);
   console.log("Name of First Compatible Petfriend: " + pets[findPetLoc].name);
+  var petFinal = pets[findPetLoc];
+
+  return res.json(petFinal);
+  // var petFinalImage = "<img src='" + pets[findPetLoc].photo + " ' >";
+
+  // document.getElementById("#match-name").innerhtml(petFinalName);
+  // $("#displayFinalModal").modal("toggle");
+  // $('#match-name').html(petFinalName);
+  // // $('#match-img').html(petFinalImage);
+
+  // let iconDisplay =  '<img src="public/images/' + iconNow[0].pix + '">';
+  // $('#weatherpix').html(iconDisplay);
 
   });
   
+  // app.get("/api/pets/:final", function(req, res) {
+  //   var petFinalName = pets[findPetLoc].name;
+  //   console.log ("pets Final Name: " + petFinalName);
+  //   res.json(petFinalName);
+  // });
+
+
 }
